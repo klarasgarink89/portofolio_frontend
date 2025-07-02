@@ -69,27 +69,6 @@ function App() {
     }
   };
 
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    const apiUrl = process.env.REACT_APP_API_URL;
-
-    axios.get(`${apiUrl}/api/hello`)
-      .then(res => {
-        setMessage(res.data.message);
-      })
-      .catch(err => {
-        console.error('Gagal fetch data:', err);
-      });
-  }, []);
-
-  return (
-    <div>
-      <h1>Frontend React (CRA)</h1>
-      <p>Pesan dari backend: {message}</p>
-    </div>
-  );
-
   return (
     <Router>
       <div className="App">
